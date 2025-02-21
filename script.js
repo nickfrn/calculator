@@ -102,4 +102,14 @@ container.addEventListener('click', (event) => {
         secondNum = '';
         operator = '';
     }
+
+    // Divide by 100 if '%' is clicked
+    if (firstNum !== '' && 
+        secondNum === '' &&
+        operator === '' &&
+        event.target.textContent === '%') {
+            firstNum = +firstNum / 100;
+
+            display.textContent = firstNum;
+        }
 })
