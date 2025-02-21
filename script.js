@@ -74,13 +74,24 @@ container.addEventListener('click', (event) => {
         secondNum !== '' &&
         operator.length !== ''
     ) {
-        result = operate(operator, +firstNum, +secondNum);
+        // Alert error if dividing by 0
+        if (secondNum == '0' && operator == '/') {
+        alert('You can\'t do that!');
 
-        firstNum = result; // Save result as firsNum for next calculation
-        secondNum = ''; // Clean secondNum for next input
-        operator = ''; // Clean operator for next operation
+        firstNum = '';
+        secondNum = '';
+        operator = '';
 
-        display.textContent = firstNum;
+        display.textContent = '0';
+        } else {
+            result = operate(operator, +firstNum, +secondNum);
+
+            firstNum = result; // Save result as firsNum for next calculation
+            secondNum = ''; // Clean secondNum for next input
+            operator = ''; // Clean operator for next operation
+
+            display.textContent = firstNum;
+        }
     }
 
     // If 'AC' is clicked, clear display and values
