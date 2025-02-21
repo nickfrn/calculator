@@ -43,8 +43,18 @@ container.addEventListener('click', (event) => {
     const operators = '+-*/';
 
     if (operators.includes(event.target.textContent)) {
-        operator = '';
-        operator += event.target.textContent;
+        // If there's already a number in firstNum, keep it as the base, reset secondNum and set the operator
+        if (firstNum !== '' && secondNum !== '') {
+            result = operate(operator, +firstNum, +secondNum);
+            
+            firstNum = result; // Result becomes the new firstNum
+            
+            secondNum = ''; // Clear secondNum for the next number input
+            
+            display.textContent = firstNum;
+        }
+
+        operator = event.target.textContent; // Set the new operator
     } 
 
     if (numbers.includes(event.target.textContent) && operator.length == 0) {
@@ -57,16 +67,17 @@ container.addEventListener('click', (event) => {
         display.textContent = secondNum;
     }
 
+    // If '=' is pressed perform operation
     if (event.target.textContent == '=' &&
-        firstNum.length > 0 &&
-        secondNum.length > 0 &&
-        operator.length == 1
+        firstNum !== '' &&
+        secondNum !== '' &&
+        operator.length !== ''
     ) {
         result = operate(operator, +firstNum, +secondNum);
 
-        firstNum = result;
-        secondNum = '';
-        operator = '';
+        firstNum = result; // Save result as firsNum for next calculation
+        secondNum = ''; // Clean secondNum for next input
+        operator = ''; // Clean operator for next operation
 
         display.textContent = firstNum;
     }
