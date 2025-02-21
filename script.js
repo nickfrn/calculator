@@ -57,6 +57,7 @@ container.addEventListener('click', (event) => {
         operator = event.target.textContent; // Set the new operator
     } 
 
+    // Fill firstNum and secondNum values
     if (numbers.includes(event.target.textContent) && operator.length == 0) {
         firstNum += event.target.textContent;
 
@@ -67,7 +68,7 @@ container.addEventListener('click', (event) => {
         display.textContent = secondNum;
     }
 
-    // If '=' is pressed perform operation
+    // If '=' is clicked perform operation
     if (event.target.textContent == '=' &&
         firstNum !== '' &&
         secondNum !== '' &&
@@ -80,5 +81,14 @@ container.addEventListener('click', (event) => {
         operator = ''; // Clean operator for next operation
 
         display.textContent = firstNum;
+    }
+
+    // If 'AC' is clicked, clear display and values
+    if (event.target.textContent == 'AC') {
+        display.textContent = '0';
+
+        firstNum = '';
+        secondNum = '';
+        operator = '';
     }
 })
