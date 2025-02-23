@@ -43,7 +43,7 @@ container.addEventListener('click', (event) => {
     const operators = '+-*/';
 
     if (operators.includes(event.target.textContent)) {
-        // If there's already a number in firstNum, keep it as the base, reset secondNum and set the operator
+        // If firstNum and secondNum are filled, get result before adding another operator
         if (firstNum !== '' && secondNum !== '') {
             result = operate(operator, +firstNum, +secondNum);
             
