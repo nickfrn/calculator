@@ -1,6 +1,6 @@
 body {
     display: flex;
-    align-items: center;
+    margin: 0;
     justify-content: center;
 }
 
@@ -9,4 +9,20 @@ body {
     width: 400px;
     height: 600px;
     flex-wrap: wrap;
+    border: 2px solid black;
+    justify-content: space-evenly;
+}
+
+.display {
+    height: 90px;
+    border: 2px solid black;
+}
+
+.btn.large {
+    width: 200px;
+}
+
+.btn {
+    width: 90px;
+    height: 90px;
 }
