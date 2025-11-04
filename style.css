@@ -2,20 +2,32 @@ body {
     display: flex;
     margin: 0;
     justify-content: center;
+    align-items: center;
+    height: 100vh;
+    box-sizing: border-box;
 }
 
 .container {
     display: flex;
+    flex-direction: column;
     width: 400px;
     height: 600px;
-    flex-wrap: wrap;
     border: 2px solid black;
     justify-content: space-evenly;
+    padding: 2em;
+    gap: 10px;
 }
 
 .display {
     height: 90px;
     border: 2px solid black;
+}
+
+.btnContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
 }
 
 .btn.large {
