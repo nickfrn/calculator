@@ -1,3 +1,11 @@
+*,
+.btn,
+.btn.large {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 3.5vh;
+    color: #3d405b;
+}
+
 body {
     display: flex;
     margin: 0;
@@ -5,6 +13,26 @@ body {
     align-items: center;
     height: 100vh;
     box-sizing: border-box;
+    background-color: #81b29a;
+}
+
+.container,
+.display,
+.btn,
+.btn.large {
+    border-radius: 16px;
+    filter: drop-shadow(5px 5px 0 #3d405b);
+}
+
+.display,
+.btn,
+.btn.large {
+    height: 90px;
+}
+
+.btn,
+.btn.large {
+    background-color: #f2cc8f;
 }
 
 .container {
@@ -12,29 +40,32 @@ body {
     flex-direction: column;
     width: 400px;
     height: 600px;
-    border: 2px solid black;
     justify-content: space-evenly;
-    padding: 2em;
+    padding: 2vw;
     gap: 10px;
+    background-color: #e07a5f;
 }
 
 .display {
-    height: 90px;
-    border: 2px solid black;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    border: none;
+    padding-right: .5em;
+    background-color: #f4f1de;
 }
 
 .btnContainer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     gap: 10px;
 }
 
 .btn.large {
-    width: 200px;
+    flex-basis: calc(50% - 5px);
 }
 
 .btn {
-    width: 90px;
-    height: 90px;
+    flex-basis: calc(25% - 7.5px);
+    border: none;
 }
